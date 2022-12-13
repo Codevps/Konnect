@@ -21,7 +21,7 @@ const VideoDetails = () => {
     );
   }, [id]);
 
-  if (!videoDetail?.snippet) return `Loading...`;
+  if (!videoDetail?.snippet) return <Box minHeight="95vh">Loading...</Box>;
   const {
     snippet: { title, channelId, channelTitle },
     statistics: { viewCount, likeCount },

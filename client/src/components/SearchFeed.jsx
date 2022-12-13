@@ -7,9 +7,9 @@ const SearchFeed = () => {
   const [videos, setVideos] = useState([]);
   const { searchTerm } = useParams();
   useEffect(() => {
-    fetchFromApi(`search?part=snippet&q=${searchTerm}`).then((data) => {
-      setVideos(data.items);
-    });
+    fetchFromApi(`search?part=snippet&q=${searchTerm}`).then((data) =>
+      setVideos(data.items)
+    );
   }, [searchTerm]);
   return (
     <Box p={2} sx={{ overflowY: "auto", height: "90vh", flex: 2 }}>
@@ -20,7 +20,7 @@ const SearchFeed = () => {
         style={{ color: "white" }}
       >
         Search Results for:
-        <span style={{ color: "#fc1503" }}>{searchTerm}</span> Videos
+        <span style={{ color: "#fc1503" }}>{` ${searchTerm}`}</span> Videos
       </Typography>
       <Videos videos={videos} />
     </Box>

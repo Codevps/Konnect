@@ -5,21 +5,26 @@ import { useNavigate } from "react-router-dom";
 
 const SearchBar = () => {
   const navigate = useNavigate();
-  const [search, setSearch] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (search) {
-      navigate(`/search/${search}`);
-      setSearch("");
+    e.preventDefault();
+    if (searchTerm) {
+      navigate(`/search/${searchTerm}`);
+      setSearchTerm("");
+    }
+  };
+  const handleSubmit1 = () => {
+    if (searchTerm) {
+      navigate(`/search/${searchTerm}`);
+      setSearchTerm("");
     }
   };
   return (
     <div>
       <Paper
         component="form"
-        onSubmit={() => {
-          handleSubmit();
-        }}
+        onSubmit={() => handleSubmit()}
         sx={{
           borderRadius: 20,
           border: "1px solid #e3e3e3",
@@ -31,13 +36,13 @@ const SearchBar = () => {
         <input
           className="search-bar"
           placeholder="Search..."
-          value={search}
+          value={searchTerm}
           onChange={(e) => {
-            setSearch(e.target.value);
+            setSearchTerm(e.target.value);
           }}
         />
         <IconButton sx={{ p: "10px", color: "red" }}>
-          <Search />
+          <Search onClick={() => handleSubmit1()} />
         </IconButton>
       </Paper>
     </div>
