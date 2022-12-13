@@ -1,5 +1,6 @@
 import CheckCircle from "@mui/icons-material/CheckCircle";
-import { Card, CardContent, CardMedia, Link, Typography } from "@mui/material";
+import { Card, CardContent, CardMedia, Typography } from "@mui/material";
+import { Link } from "react-router-dom";
 import React from "react";
 import {
   demoChannelTitle,
@@ -43,7 +44,8 @@ const VideoCard = ({
           }
         >
           <Typography variant="subtitle2" fontWeight="bold" color="grey">
-            {snippet?.channel.slice(0, 60) || demoChannelTitle.slice(0, 60)}
+            {snippet?.channelTitle.slice(0, 60) ||
+              demoChannelTitle.slice(0, 60)}
             <CheckCircle sx={{ fontSize: 12, color: "grey", ml: "5px" }} />
           </Typography>
         </Link>

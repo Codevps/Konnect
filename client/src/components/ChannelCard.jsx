@@ -1,10 +1,12 @@
 import CheckCircle from "@mui/icons-material/CheckCircle";
-import { CardContent, CardMedia, Link, Typography } from "@mui/material";
-import { Box } from "@mui/system";
+import { CardContent, CardMedia, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import React from "react";
+import { Link } from "react-router-dom";
+
 import { demoProfilePicture } from "../utils/constants";
 
-const ChannelCard = ({ channel }) => {
+const ChannelCard = ({ channel, marginTop }) => {
   return (
     <Box
       sx={{
@@ -13,9 +15,10 @@ const ChannelCard = ({ channel }) => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        width: "326px",
-        height: { sx: "365px", md: "320px" },
+        height: "326px",
+        width: { sx: "356px", md: "320px" },
         margin: "auto",
+        mt: marginTop,
       }}
     >
       <Link to={`/channel/${channel?.id?.channelId}`}>
