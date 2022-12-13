@@ -8,7 +8,7 @@ import { fetchFromApi } from "../utils/FetchApi";
 import Videos from "./Videos";
 
 const VideoDetails = () => {
-  const { id } = useParams;
+  const { id } = useParams();
   const [videoDetail, setVideoDetail] = useState(null);
   const [videos, setVideos] = useState(null);
   useEffect(() => {
@@ -47,14 +47,14 @@ const VideoDetails = () => {
               py={1}
               px={2}
             >
-              <Link to={`channel/${channelId}`}>
+              <Link to={`/channel/${channelId}`}>
                 <Typography
                   variant={{ sm: "subtitle1", md: "h6" }}
                   color="#fff"
                 >
                   {channelTitle}
                   <CheckCircle
-                    sx={{ fontSize: "10px", ml: "5px", color: "grey" }}
+                    sx={{ fontSize: "12px", ml: "5px", color: "grey" }}
                   />
                 </Typography>
               </Link>

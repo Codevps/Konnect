@@ -1,8 +1,12 @@
 import { Stack } from "@mui/material";
-import React from "react";
+import React, { useEffect } from "react";
 import { categories } from "../utils/constants";
 
 const SideBar = ({ selectedCategory, setSelectedCategory }) => {
+  // useEffect(() => {
+  //   window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  // }, []);
+
   return (
     <Stack
       direction="row"

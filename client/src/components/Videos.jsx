@@ -1,11 +1,10 @@
 import { Stack } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
-import VideoCard from "./VideoCard.jsx";
 import ChannelCard from "./ChannelCard.jsx";
+import VideoCard from "./VideoCard.jsx";
 
 const Videos = ({ videos, direction }) => {
-  console.log(videos);
   if (!videos?.length) {
     return "Loading..";
   }
